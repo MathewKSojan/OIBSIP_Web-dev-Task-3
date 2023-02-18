@@ -1,0 +1,54 @@
+<!--InfoByte Web Development Level-1(Task-3).-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="tempconv.css">
+    <link rel="stylesheet" href="temp.js">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <div class="container">
+    <h1 style="font-weight: 400;">Temperature Converter</h1>
+    <br>
+    <br>
+    <form>
+    <div class="inp">
+        <label style="font-size: 20px;">Enter the temperature</label><input type="number" id="tempinp">
+        <br>
+        <br>
+        <label>Select Unit</label><select id="unit" name="unit">
+            <option value="celsius">Celsius(°C)</option>
+            <option value="fahrenheit">Fahrenheit(°F)</option>
+        </select>
+    <input type="submit" value="Convert">
+</form>
+    <p>Converson is resulted:</p>
+    <script>
+		document.querySelector('form').addEventListener('submit', function(e) {
+			e.preventDefault(); 
+			const temp = document.getElementById('tempinp').value;
+			const unit = document.getElementById('unit').value;
+			const result = document.getElementById('result');
+			if (unit === 'celsius') {
+				result.innerHTML = (temp * 9/5 + 32) + '°F';
+			} else if (unit === 'fahrenheit') {
+				result.innerHTML = ((temp - 32) * 5/9) + '°C';
+			} else if (unit === 'kelvin') {
+				result.innerHTML = (temp - 273.15) + '°C';
+			}
+		});
+	</script>
+    <p id="result"></p>
+    </div>
+    <br>
+    <br>
+    <img src="—Pngtree—handwritten stay hydrated lettering and_7119482.png" alt="img" style="height:5cm;">
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
